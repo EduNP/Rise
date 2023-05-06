@@ -1,11 +1,16 @@
+import TaskBar from './components/TaskBar';
+import './App.css';
 import SmallBox from './components/SmallBox';
-import Background from './components/Background';
 
 function App() {
   return (  
-      <Background>
-        <SmallBox />
-      </Background>
+    <body>
+      <div className='container'>
+          <h1 italics>@rise.unesp</h1>
+          <SmallBox/>
+          <TaskBar/>
+      </div>
+    </body>
   );
 }
 

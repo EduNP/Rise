@@ -1,8 +1,12 @@
 .background {
-  background-image: url(../assets/background.svg);
-  background-position: center;
+  background-image: linear-gradient( 144deg, 
+                                    #db338a, 
+                                    #d5358b,
+                                    #c53d8f,
+                                    #ab4a97,
+                                    #865ca1,
+                                    #5774ad,
+                                    #1f90bd,
+                                    #00a0c6 );
   background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
 }

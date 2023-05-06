@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+ 
+.container .PinkBox {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background: rgba(255,255,255,0.4);
+  border: 2px solid #354896;
+}
+
+.icon img {
+  margin-left: 4px;
+  margin-right: 24px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all ease 0.005s;
+  opacity: 1;
+}
+
+img:hover {
+  opacity:70%;
+}
+
+.container .PinkBox .icon {
+  display: flex;
+  height: 58px;
+  width: 52px;
+  margin-left: 4px;
+}
+
+.box-container {
+  display: flex;
+  height: 58px;
+  width: 55px;
+  border-right: 1px solid #354896;
+  opacity: 100%;
+}
+

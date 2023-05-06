@@ -5,8 +5,7 @@ import '../styles/box.css';
 const SmallBox = () => {
   
   useDragger("small-box");
-
-  return <div id="small-box" className="box"></div>
+  return <h1>teste</h1>;
 };
 
 export default SmallBox;
