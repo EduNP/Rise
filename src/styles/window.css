@@ -1,33 +1,18 @@
-.container {
+.container .window-container {
   display: flex;
   justify-content: center;
-  align-items: left;
-}
-
-.modal-overlay {
-  background: #ececec;
-  position: fixed;
+  align-items: right;
   top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin-right: 20%;
 }
 
-.modal-content {
-  width: 90%;
-  max-width: 500px;
-  background-color: white;
-  padding: 10px;
-  border-radius: 5px;
+.window-container .window {
+  border: 3px solid #000000;
+  background-color: aqua;
 }
 
-button {
-  padding: 5px;
-  font-size: large;
-  float: right;
-  cursor: pointer;
+h1  {
+  margin-top: 20%;
+  margin-left: 20%;
+  color: #000000;
 }

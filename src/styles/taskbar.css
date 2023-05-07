@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
  
-.container .PinkBox {
+.container .taskbar {
   position: absolute;
   height: 60px;
   width: 100%;
@@ -23,7 +23,7 @@ img:hover {
   opacity:70%;
 }
 
-.container .PinkBox .icon {
+.container .taskbar .icon {
   display: flex;
   height: 58px;
   width: 52px;

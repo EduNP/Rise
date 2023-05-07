@@ -12,21 +12,18 @@ export default function TaskBar() {
   const onShow = React.useCallback(() => setRender(true), []);
 
     return(
-        <div className='container'> 
-            <div className='PinkBox'>
+      <div className='container'>
+            <div className='taskbar'>
               <div className='icon'>
                 <div className='box-container'>
                   <img src={riseroundlogo} alt="RISEROUNDLOGO" onClick={onShow}/>
-                  {hasRender && <Window/>}
                   <img src={Internet} alt="INTERNET" onClick={onShow}/>
-                  {hasRender && <Window/>}
-                  <img src={folders} alt="FOLDERS" onClick={onShow}/>
-                  {hasRender && <Window/>} 
+                  <img src={folders} alt="FOLDERS" onClick={onShow}/> 
                   <img src={opentask} alt="OPENTASK" onClick={onShow}/>
-                  {hasRender && <Window/>}
                 </div>
               </div>
             </div>  
+          {hasRender && <Window/>}
         </div>
     );
 }
