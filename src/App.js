@@ -7,7 +7,6 @@ function App() {
     <body>
       <div className='container'>
           <h1 italics>@rise.unesp</h1>
-          <SmallBox/>
           <TaskBar/>
       </div>
     </body>
