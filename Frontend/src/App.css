@@ -12,17 +12,20 @@ html, body, #root {
 .windowHeadDiv{
   width: 40%;
   height: 30px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: black;
   user-select: none;
+  
 }
 .windowBodyDiv{
     width: 40%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color:#5774AD;
+    border: 2px solid black;
 }
 
 .insideWindowBody{
   margin-top: 30px;
   text-align: center;
+  color: orange;
   font-size: 30px;
   margin-bottom: 15px;
 
