@@ -1,4 +1,5 @@
 import TaskBar from './components/TaskBar';
+import Login from './components/Login';
 import './App.css';
 import axios from 'axios';
 import {useRef, useState} from 'react';
@@ -99,7 +100,7 @@ function App() {
 				]
     };
 
-    axios.post('http://rise-api.edunp.com.br/usuario/', postData)
+    axios.post('https://rise.edunp.com.br/api/usuario/', postData)
       .then(response => {
         console.log(response.data);
         // Handle the response data
@@ -113,7 +114,7 @@ function App() {
 
 
   function handleUserSignUp(userData) {
-    axios.post('http://www.rise-api.edunp.com.br/usuario', userData)
+    axios.post('https://www.rise.edunp.com.br/api/usuario', userData)
     .then(response => {
       console.log(response.data);
       // Handle the response data
@@ -127,39 +128,11 @@ function App() {
   return (  
     <body onLoad={move()}>
       <div className='container'>
-      
           <h1 italics>@rise.unesp</h1>
-          <div style={
-            {
-              position:'absolute',
-              left:position[0][0], 
-              top:position[0][1],
-              zIndex: zIndex[0]
-            }
-          } className='windowBodyDiv'> 
-
-          <div className='insideWindowBody'>
-            <form method='GET'>
-            <text>Login</text>
-            <input type='text' placeholder='Login' name='login'></input>
-            <text>Senha</text>
-            <input type='password' placeholder='Senha' name='password'></input>    
-            <input type='submit' value='Entrar'></input>
-            
-            </form>      
-          </div>
-          </div>
-
-          <div onMouseDownCapture={useTrue} ref={ref} style={
-            {
-              position:'absolute',
-              left: position[0][0], 
-              top: position[0][1],
-              zIndex: zIndex[0]
-            }
-          } id="LoginDiv.0" className='windowHeadDiv'>
-
-          </div>
+          {/*LOGIN*/}
+          <Login position={position} zIndex={zIndex} useTrue={useTrue} />
+          {/*LOGIN*/}
+          {/*REGISTER*/}
           <div style={
             {
               position:'absolute',
@@ -196,7 +169,39 @@ function App() {
           } id="RegisterDiv.1" className='windowHeadDiv'>
 
           </div>
-        
+          {/*REGISTER*/}
+          {/*CHANGE PASSWORD*/}
+          <div style={
+            {
+              position:'absolute',
+              left: position[2][0], 
+              top: position[2][1],
+              zIndex: zIndex[2]
+            }
+          } className='windowBodyDiv'> 
+
+          <div className='insideWindowBody'>
+            <form method='POST' onSubmit={handleSubmit}>
+            <text>Senha</text>
+            <input type='password' placeholder='Digite sua senha' name='password'></input>    
+            <input type='password' placeholder='Repita sua senha' name='password-confirmation'></input> 
+            <input type='submit' value='Cadastrar'></input>
+            
+            </form>      
+          </div>
+          </div>
+
+          <div onMouseDownCapture={useTrue} ref={ref} style={
+            {
+              position:'absolute',
+              left: position[2][0], 
+              top: position[2][1],
+              zIndex: zIndex[2]
+            }
+          } id="ChangePasswordDiv.2" className='windowHeadDiv'>
+
+          </div>
+          {/*CHANGE PASSWORD*/}
           <TaskBar/>
           
       </div>
