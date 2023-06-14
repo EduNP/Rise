@@ -130,7 +130,7 @@ function App() {
       <div className='container'>
           <h1 italics>@rise.unesp</h1>
           {/*LOGIN*/}
-          <Login position={position} zIndex={zIndex} useTrue={useTrue} />
+          <Login position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>
           {/*LOGIN*/}
           {/*REGISTER*/}
           <div style={
