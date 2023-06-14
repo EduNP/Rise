@@ -1,13 +1,14 @@
 
 export default function Login(props) {
-  return 
-    <div>
+  const {position, zIndex, useTrue, ref} = props
+  return (
+    <div className='container'>
       <div style={
         {
           position:'absolute',
-          left:props.position[0][0], 
-          top:props.position[0][1],
-          zIndex: props.zIndex[0]
+          left:position[0][0], 
+          top:position[0][1],
+          zIndex: zIndex[0]
         }
       } className='windowBodyDiv'> 
 
@@ -23,15 +24,16 @@ export default function Login(props) {
         </div>
       </div>
 
-      <div onMouseDownCapture={props.useTrue} ref={props.ref} style={
+      <div onMouseDownCapture={useTrue} ref={ref} style={
         {
           position:'absolute',
-          left:props.position[0][0], 
-          top:props.position[0][1],
-          zIndex: props.zIndex[0]
+          left:position[0][0], 
+          top:position[0][1],
+          zIndex: zIndex[0]
         }
       } id="LoginDiv.0" className='windowHeadDiv'>
 
       </div>
     </div>
+  );
 }
