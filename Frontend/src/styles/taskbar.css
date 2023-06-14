@@ -11,11 +11,29 @@
 
 .menu {
   display: block;
-  margin-top: 300px;
+  position: absolute;
   height: 300px;
-  width: 240px;
-  background: #354896;
-  opacity: 0.8;
+  margin-top: calc(100vh - 422px);
+  margin-bottom: 0;
+  color:white;
+  font-size: 30px;
+  width: 15%;
+  background: #1f90bd;
+  opacity: 1;
+}
+
+.menu li {
+  border-bottom: solid 2px black;
+}
+.menu ul {
+  border: double 2px black;
+  border-bottom: none;
+  list-style-type: none;
+}
+.menu li:hover{
+  
+  background: #c53d8f;
+  border: solid 2px white;
 }
 
 .menu img {

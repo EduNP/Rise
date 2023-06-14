@@ -9,7 +9,7 @@ import {useRef, useState} from 'react';
 function App() {
 
   var positionInit = [];
-  var divNumber = 3;
+  var divNumber = 7;
   var zIndexInit = [];
 
   for(var c=0;c<divNumber;c++){

@@ -7,9 +7,9 @@ export default function ChangePassword(props)  {
       <div style={
         {
           position:'absolute',
-          left:position[0][0], 
-          top:position[0][1],
-          zIndex: zIndex[0]
+          left:position[2][0], 
+          top:position[2][1],
+          zIndex: zIndex[2]
         }
       } className='windowBodyDiv'> 
 
@@ -19,7 +19,7 @@ export default function ChangePassword(props)  {
           <input type='text' placeholder='Senha' name='password'></input>
           <text>Repetir senha</text>
           <input type='password' placeholder='Senha' name='password'></input>    
-          <input type='submit' value='Alterar senha'></input>
+          <input type='submit' value='Alterar'></input>
           
           </form>      
         </div>
@@ -28,9 +28,9 @@ export default function ChangePassword(props)  {
       <div onMouseDownCapture={useTrue} ref={ref} style={
         {
           position:'absolute',
-          left:position[0][0], 
-          top:position[0][1],
-          zIndex: zIndex[0]
+          left:position[2][0], 
+          top:position[2][1],
+          zIndex: zIndex[2]
         }
       } id="ChangePasswordDiv.2" className='windowHeadDiv'>
 

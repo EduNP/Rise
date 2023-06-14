@@ -15,11 +15,17 @@ export default function TaskBar() {
   const Menu = () => {
     return (
       <div className="menu">
+        <ul>
+            <li>Cadastrar</li>
+            <li>Entrar</li>
+            <li>Alterar senha</li>
+            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="https://www.infoescola.com/wp-content/uploads/2008/05/lhama-196031198.jpg" /></a></li>
+        </ul>
+        {/* <img src={opentask} alt="OPENTASK" onClick={onShow} />
         <img src={opentask} alt="OPENTASK" onClick={onShow} />
         <img src={opentask} alt="OPENTASK" onClick={onShow} />
         <img src={opentask} alt="OPENTASK" onClick={onShow} />
-        <img src={opentask} alt="OPENTASK" onClick={onShow} />
-        <img src={opentask} alt="OPENTASK" onClick={onShow} />
+        <img src={opentask} alt="OPENTASK" onClick={onShow} /> */}
       </div>
     );
   };
@@ -39,14 +45,16 @@ export default function TaskBar() {
             <div className='taskbar'>
               <div className='icon'>
                 <div className='box-container'>
+                
                   <img src={riseroundlogo} alt="RISEROUNDLOGO" onClick={onShow} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
                   <img src={Internet} alt="INTERNET" onClick={onShow} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
                   <img src={folders} alt="FOLDERS" onClick={onShow} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/> 
                   <img src={opentask} alt="OPENTASK" onClick={onShow} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
                 </div>
               </div>
+              
             </div>  
-          {isHovering && <Menu />}
+            <Menu />
           {hasRender && <Window/>}
         </div>
     );
