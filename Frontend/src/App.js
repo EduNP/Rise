@@ -1,7 +1,4 @@
 import TaskBar from './components/TaskBar';
-import Login from './components/Login';
-import Register from './components/Register';
-import ChangePassword from './components/ChangePassword';
 import './App.css';
 import axios from 'axios';
 import {useRef, useState} from 'react';
@@ -69,21 +66,6 @@ function App() {
   }
 
 
-/*
-
-{
-				"id":"",
-				"name": "alex",
-				"email": "alexmail",
-				"password": "123",
-				"score": 30,
-				"admin": 0,
-				"phoneNumbers": [
-				]
-}
-
-*/
-
   const handleSubmit = (event) => {
     event.preventDefault();
     //const userData = []
@@ -131,16 +113,8 @@ function App() {
     <body onLoad={move()}>
       <div className='container'>
           <h1 italics>@rise.unesp</h1>
-          {/*LOGIN*/}
-          <Login position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>
-          {/*LOGIN*/}
-          {/*REGISTER*/}
-          <Register position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} handleSubmit={handleSubmit}/>
-          {/*REGISTER*/}
-          {/*CHANGE PASSWORD*/}
-          <ChangePassword position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>
-          {/*CHANGE PASSWORD*/}
-          <TaskBar/>
+        
+          <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} handleSubmit={handleSubmit}/>
           
       </div>
     </body>
