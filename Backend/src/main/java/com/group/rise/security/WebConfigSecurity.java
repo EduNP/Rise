@@ -33,7 +33,7 @@ public class WebConfigSecurity extends WebSecurityConfigurerAdapter {
 		.disable().authorizeRequests().antMatchers("/").permitAll()
 		.antMatchers("/index").permitAll()
 		.antMatchers("/usuario/").permitAll()
-		
+
 		/*URL de Logout - Redireciona após o user deslogar do sistema*/
 		.anyRequest().authenticated().and().logout().logoutSuccessUrl("/index")
 		

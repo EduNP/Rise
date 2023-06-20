@@ -1,6 +1,27 @@
+import axios from 'axios';
 
 export default function Login(props) {
   const {position, zIndex, useTrue, ref} = props
+  
+  const handleUserSignUp = (e) => {
+    e.preventDefault()
+
+    var userData = e.target.elements 
+    const postData = {
+      id: "",
+      email: userData.email.value,
+      password: userData.password.value
+    }
+
+    axios.post('https://rise.edunp.com.br/api/login', postData)
+    .then(response => {
+      console.log(response);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+  }
+
   return (
     <div className='container'>
       <div style={
@@ -13,13 +34,12 @@ export default function Login(props) {
       } className='windowBodyDiv'> 
 
         <div className='insideWindowBody'>
-          <form method='GET'>
-          <text>Login</text>
-          <input type='text' placeholder='Login' name='login'></input>
+          <form method='POST' onSubmit={handleUserSignUp}>
+          <text>Email</text>
+          <input type='text' placeholder='Email' name='email' required></input>
           <text>Senha</text>
-          <input type='password' placeholder='Senha' name='password'></input>    
+          <input type='password' placeholder='Senha' name='password' required></input>    
           <input type='submit' value='Entrar'></input>
-          
           </form>      
         </div>
       </div>

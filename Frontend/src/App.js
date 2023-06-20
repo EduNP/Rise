@@ -65,56 +65,12 @@ function App() {
 
   }
 
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //const userData = []
-    //userData.push(event.target.elements.name.value)
-
-    var formsData = event.target.elements;
-
-    const postData = {
-      id: "",
-      name: formsData.name.value,
-			email: formsData.email.value,
-			password: formsData.password.value,
-			score: 0,
-			admin: 0,
-			phoneNumbers: [
-				]
-    };
-
-    axios.post('https://rise.edunp.com.br/api/usuario/', postData)
-      .then(response => {
-        console.log(response.data);
-        // Handle the response data
-      })
-      .catch(error => {
-        console.error(error);
-        // Handle the error
-      });
-
-  }
-
-
-  function handleUserSignUp(userData) {
-    axios.post('https://www.rise.edunp.com.br/api/usuario', userData)
-    .then(response => {
-      console.log(response.data);
-      // Handle the response data
-    })
-    .catch(error => {
-      console.error(error);
-      // Handle the error
-    });
-  }
-
   return (  
     <body onLoad={move()}>
       <div className='container'>
           <h1 italics>@rise.unesp</h1>
         
-          <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} handleSubmit={handleSubmit}/>
+          <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} />
           
       </div>
     </body>
