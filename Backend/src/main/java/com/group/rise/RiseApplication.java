@@ -24,8 +24,6 @@ public class RiseApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(RiseApplication.class, args);
-
-		System.out.println(new BCryptPasswordEncoder().encode("123"));
 	}
 
 }

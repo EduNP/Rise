@@ -1,4 +1,5 @@
 import axios from 'axios';
+import pinComponent from './TaskBar';
 
 export default function Login(props) {
   const {position, zIndex, useTrue, ref} = props
@@ -52,7 +53,7 @@ export default function Login(props) {
           zIndex: zIndex[0]
         }
       } id="LoginDiv.0" className='windowHeadDiv'>
-
+        
       </div>
     </div>
   );

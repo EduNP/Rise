@@ -2,15 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 import { render } from "react-dom";
 import Window from './Window';
+import About from './About';
 import Login from './Login';
 import Register from './Register';
+import Donation from './Donation';
 import ChangePassword from './ChangePassword';
+import Events from './Events';
 import "../styles/taskbar.css"
 import folders from '../assets/folders.png';
 import Internet from '../assets/Internet.png';
 import opentask from '../assets/opentask.png';
 import riseroundlogo from '../assets/riseroundlogo.png';
 import lhama from "../images/lhama-196031198.jpg"
+import { createElement } from 'react';
+
 
 export default function TaskBar(props) {
   
@@ -18,7 +23,7 @@ export default function TaskBar(props) {
 
  
   var visibleWindows = [];
-  var windowNumber = 4;
+  var windowNumber = 9;
 
 
   if(visibleWindows.length != windowNumber){
@@ -37,6 +42,9 @@ export default function TaskBar(props) {
             <li id="LoginLi.1" onClick={pinComponent} >Entrar</li>
             <li id="RegisterLi.2" onClick={pinComponent} >Cadastrar</li>
             <li id="ChangePassword.3" onClick={pinComponent} >Alterar senha</li>
+            <li id="About.4" onClick={pinComponent} >Sobre nós</li>
+            <li id="Donation.5" onClick={pinComponent} >Doação</li>
+            <li id="Events.6" onClick={pinComponent} >Eventos</li>
             <li onClick={pinComponent} ><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src={lhama} /></a></li>
         </ul>
       </div>
@@ -56,7 +64,8 @@ export default function TaskBar(props) {
 
     const pinComponent = (component) => {
       
-      
+      //<button onClick={pinComponent}>x</button>
+
       const index = component.target.id.split('.')[1];
 
       for(var i=0; i<windowNumber; i++){
@@ -67,6 +76,7 @@ export default function TaskBar(props) {
             
           }else{
             visibleWindows[index] = true;
+            
           }
         }else{
           visibleWindows[i] = isVisible[i];
@@ -107,8 +117,11 @@ export default function TaskBar(props) {
             {/*CHANGE PASSWORD*/}
             {isVisible[3] &&  <ChangePassword position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
             {/*CHANGE PASSWORD*/}
-            
+            {isVisible[4] && <About position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
 
+            {isVisible[5] &&  <Donation position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
+
+            {isVisible[6] &&  <Events position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
         </div>
     );
 }

@@ -17,6 +17,8 @@ import javax.persistence.TemporalType;
 
 @Entity
 public class Event {
+  private static final long serialVersionUID = 1L;
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
@@ -34,8 +36,8 @@ public class Event {
   @Column(name = "usuario", nullable = false)
   private Usuario user;
 
-  @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Filesinfos> fileInfo = new ArrayList<Filesinfos>();
+//  @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+ // private List<Filesinfos> fileInfo = new ArrayList<Filesinfos>();
 
 
   @Override

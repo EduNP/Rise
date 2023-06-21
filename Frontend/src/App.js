@@ -6,7 +6,7 @@ import {useRef, useState} from 'react';
 function App() {
 
   var positionInit = [];
-  var divNumber = 7;
+  var divNumber = 9;
   var zIndexInit = [];
 
   for(var c=0;c<divNumber;c++){
@@ -36,7 +36,7 @@ function App() {
   }
 
   function move(){
-
+    
     document.onmousemove = function(e){
 
       var x = e.pageX;
