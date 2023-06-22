@@ -1,4 +1,5 @@
 * {
+  font-family: "Lucida Console", "Courier New", monospace;
   margin: 0;
   padding: 0;
   outline: 0;
@@ -7,6 +8,7 @@
 
 html, body, #root {
   background-image: linear-gradient(144deg, var(--color-gradient));
+  background-image: url("https://picsum.photos/200/200");
 }
 
 .windowHeadDiv{
@@ -37,17 +39,16 @@ html, body, #root {
 
 .windowBodyDiv{
     width: 40%;
-    background-color:#5774AD;
+    background-color:rgba(219,51,138,0.9);
     border: 2px solid black;
 }
 
 .insideWindowBody{
   margin-top: 30px;
   text-align: center;
-  color: orange;
+  color: white;
   font-size: 30px;
   margin-bottom: 15px;
-
 }
 
 .insideWindowBody h3 {
@@ -120,7 +121,8 @@ footer {
 .section__padding {
   padding: 4rem 6rem;
 }
-.section__margin {
+.
+section__margin {
   margin: 4rem 6rem;
 }
 .shadow-drop-2-center {

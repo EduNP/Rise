@@ -1,0 +1,13 @@
+.square{
+    display: inline-block;
+    border: solid 4px #000000;
+    overflow-x: auto;
+    margin-top: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #FFFFFF;
+    text-align: left;
+    font-weight: bold;
+    width: fit-content;
+    min-width: 52px;
+}

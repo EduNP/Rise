@@ -17,7 +17,7 @@ export default function About(props) {
             <h3>Venha conhecer o RISE</h3>
             <p>
               Somos um grupo de estudos da UNESP de Rio Claro, dedicado a disseminar
-              conhecimentos sobre Segurança da Informação para qualquer pessoa, independente do npivel de conhecimento prévio
+              conhecimentos sobre Segurança da Informação para qualquer pessoa, independente do nível de conhecimento prévio
             </p>
             <p>
               Acreditamos que todos devem ter acesso a informações que possam ajudá-losa proteger seus dados pessoais

@@ -1,26 +1,23 @@
 import axios from 'axios';
+import EventsSquares from './EventsSquares';
+import {useEffect, useState} from 'react';
 
 export default function Events(props) {
   const {position, zIndex, useTrue, ref} = props
-  
-  const handleUserSignUp = (e) => {
-    e.preventDefault()
+  const [data, setData] = useState(null);
 
-    var userData = e.target.elements 
-    const postData = {
-      id: "",
-      email: userData.email.value,
-      password: userData.password.value
-    }
-
-    axios.post('https://rise.edunp.com.br/api/login', postData)
+  useEffect(()=>{loadEvent();}, []);
+  const loadEvent = () => {
+    axios.get('https://rise.edunp.com.br/api/events/')
     .then(response => {
-      console.log(response);
+      setData(response.data);
     })
     .catch(error => {
       console.error(error);
     });
   }
+    if(!data)
+      return null;
 
   return (
     <div className='container'>
@@ -34,7 +31,8 @@ export default function Events(props) {
       } className='windowBodyDiv'> 
 
         <div className='insideWindowBody'>
-          EVENTOS DHR
+          {data.map( (item) => <EventsSquares title={item.title} date={item.start} description={item.description}/>)}
+          
         </div>
       </div>
 

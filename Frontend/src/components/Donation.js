@@ -1,4 +1,5 @@
 import monki from "../images/monki-flip-monkey.gif"
+import music from "../music/donationMusic.mp3"
 
 export default function Donation(props) {
     const {position, zIndex, useTrue, ref} = props
@@ -18,7 +19,7 @@ export default function Donation(props) {
   
           <div className='insideWindowBody'>
 
-          <audio id="audioDonation" src="https://cdn.pixabay.com/audio/2022/03/13/audio_3f98c317f0.mp3" autoPlay loop></audio>
+          <audio id="audioDonation" src={music} autoPlay loop></audio>
             <p>Contribua com nosso grupo de estudos, clique no monki flip!</p><br/>
             <div className="donationButton">
                 <form action="https://www.paypal.com/donate" method="post" target="_top">

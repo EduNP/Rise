@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.group.rise.model.Event;
-
 import com.group.rise.repository.EventRepository;
 
 @RestController
@@ -40,9 +39,8 @@ public class EventController {
     }
 
     @PostMapping(value = "/", produces = "application/json")
-    public ResponseEntity createEvent(@RequestBody Event event) {
+    public ResponseEntity<Event> cadastrar(@RequestBody Event event) {
         Event savedEvent = eventRepository.save(event);
-        
         return new ResponseEntity<>(savedEvent, HttpStatus.OK);
     }
 

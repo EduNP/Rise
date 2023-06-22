@@ -8,6 +8,7 @@ import Register from './Register';
 import Donation from './Donation';
 import ChangePassword from './ChangePassword';
 import Events from './Events';
+import Downloads from './Downloads'
 import "../styles/taskbar.css"
 import folders from '../assets/folders.png';
 import Internet from '../assets/Internet.png';
@@ -99,7 +100,7 @@ export default function TaskBar(props) {
                 <div className='box-container'>
                   <img draggable="false" style={{filter: (isVisible[0]==0) ? 'none': `drop-shadow(0 0 0.75rem #db338a)`, transitionDuration: '1000ms'}} id="menuButton.0" src={riseroundlogo} alt="RISEROUNDLOGO" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
                   <img draggable="false" src={Internet} alt="INTERNET" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
-                  <img draggable="false" src={folders} alt="FOLDERS" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/> 
+                  <img draggable="false" src={folders} alt="FOLDERS" id="Downloads.7" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/> 
                 </div>
                 
               </div> 
@@ -122,6 +123,9 @@ export default function TaskBar(props) {
             {isVisible[5] &&  <Donation position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
 
             {isVisible[6] &&  <Events position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
+
+            {isVisible[7] &&  <Downloads position={position} zIndex={zIndex} useTrue={useTrue } ref={ref}/>}
+
         </div>
     );
 }

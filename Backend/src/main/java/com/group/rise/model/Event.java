@@ -13,6 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore; 
 
 
 @Entity
@@ -22,18 +25,28 @@ public class Event {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
+
   @Temporal(TemporalType.TIMESTAMP)
-  private Date start;
-  @Temporal(TemporalType.TIMESTAMP)
-  private Date end;
+  private java.util.Date start;
+  
   private String title;
+
+  @Temporal(TemporalType.TIMESTAMP)
+  private java.util.Date endDate;
+  
+
   private String theme;
   private String description;
   private String attendanceCode;
   private Integer enableAttendanceCode;
+  
   @Temporal(TemporalType.TIMESTAMP)
-  private Date codeExpirationDate;
-  @Column(name = "usuario", nullable = false)
+  private java.util.Date codeExpirationDate;
+  
+  @JsonIgnore
+  @org.hibernate.annotations.ForeignKey(name = "usuario_id")
+  @ManyToOne(optional = false)
+  //@Column(name = "usuario", nullable = false)
   private Usuario user;
 
 //  @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -71,13 +84,7 @@ public class Event {
     return true;
   }
 
-  public Date getCodeExpirationDate() {
-    return codeExpirationDate;
-  }
 
-  public void setCodeExpirationDate(Date codeExpirationDate) {
-    this.codeExpirationDate = codeExpirationDate;
-  }
 
   public Integer getEnableAttendanceCode() {
     return enableAttendanceCode;
@@ -95,7 +102,6 @@ public class Event {
     this.attendanceCode = attendanceCode;
   }
 
-
   public Date getStart() {
     return start;
   }
@@ -104,12 +110,20 @@ public class Event {
     this.start = start;
   }
 
-  public Date getEnd() {
-    return end;
+  public java.util.Date getEndDate() {
+    return endDate;
   }
 
-  public void setEnd(Date end) {
-    this.end = end;
+  public void setEndDate(Date endDate) {
+    this.endDate = endDate;
+  }
+
+  public java.util.Date getCodeExpirationDate() {
+    return codeExpirationDate;
+  }
+
+  public void setCodeExpirationDate(Date codeExpirationDate) {
+    this.codeExpirationDate = codeExpirationDate;
   }
 
   public String getTitle() {
@@ -143,7 +157,6 @@ public class Event {
   public void setUser(Usuario user) {
     this.user = user;
   }
-
 
   public Long getId() {
     return id;

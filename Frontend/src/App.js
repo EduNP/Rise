@@ -68,8 +68,9 @@ function App() {
   return (  
     <body onLoad={move()}>
       <div className='container'>
-          <h1 italics>@rise.unesp</h1>
-        
+          <div style={{background:`rgba(0,0,0,0.5)`, textAlign:"center"}}>
+            <h1 style={{margin:"auto", fontSize:"54.8px"}} italics>@rise.unesp</h1>        
+          </div>
           <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} />
           
       </div>
