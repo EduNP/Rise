@@ -99,7 +99,7 @@ export default function TaskBar(props) {
               <div className='icon'>
                 <div className='box-container'>
                   <img draggable="false" style={{filter: (isVisible[0]==0) ? 'none': `drop-shadow(0 0 0.75rem #db338a)`, transitionDuration: '1000ms'}} id="menuButton.0" src={riseroundlogo} alt="RISEROUNDLOGO" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
-                  <img draggable="false" src={Internet} alt="INTERNET" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
+                  <a href="https://pt.wikipedia.org/wiki/Especial:Aleat%C3%B3ria" target="_blank" rel="noopener noreferrer"><img draggable="false" src={Internet} alt="INTERNET" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/></a>
                   <img draggable="false" src={folders} alt="FOLDERS" id="Downloads.7" onClick={pinComponent} onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/> 
                 </div>
                 
