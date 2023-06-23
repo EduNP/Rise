@@ -6,7 +6,7 @@ import {useRef, useState} from 'react';
 function App() {
 
   var positionInit = [];
-  var divNumber = 3;
+  var divNumber = 9;
   var zIndexInit = [];
 
   for(var c=0;c<divNumber;c++){
@@ -36,7 +36,7 @@ function App() {
   }
 
   function move(){
-
+    
     document.onmousemove = function(e){
 
       var x = e.pageX;
@@ -65,139 +65,13 @@ function App() {
 
   }
 
-
-/*
-
-{
-				"id":"",
-				"name": "alex",
-				"email": "alexmail",
-				"password": "123",
-				"score": 30,
-				"admin": 0,
-				"phoneNumbers": [
-				]
-}
-
-*/
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    //const userData = []
-    //userData.push(event.target.elements.name.value)
-
-    var formsData = event.target.elements;
-
-    const postData = {
-      id: "",
-      name: formsData.name.value,
-			email: formsData.email.value,
-			password: formsData.password.value,
-			score: 0,
-			admin: 0,
-			phoneNumbers: [
-				]
-    };
-
-    axios.post('http://rise-api.edunp.com.br/usuario/', postData)
-      .then(response => {
-        console.log(response.data);
-        // Handle the response data
-      })
-      .catch(error => {
-        console.error(error);
-        // Handle the error
-      });
-
-  }
-
-
-  function handleUserSignUp(userData) {
-    axios.post('http://www.rise-api.edunp.com.br/usuario', userData)
-    .then(response => {
-      console.log(response.data);
-      // Handle the response data
-    })
-    .catch(error => {
-      console.error(error);
-      // Handle the error
-    });
-  }
-
   return (  
     <body onLoad={move()}>
       <div className='container'>
-      
-          <h1 italics>@rise.unesp</h1>
-          <div style={
-            {
-              position:'absolute',
-              left:position[0][0], 
-              top:position[0][1],
-              zIndex: zIndex[0]
-            }
-          } className='windowBodyDiv'> 
-
-          <div className='insideWindowBody'>
-            <form method='GET'>
-            <text>Login</text>
-            <input type='text' placeholder='Login' name='login'></input>
-            <text>Senha</text>
-            <input type='password' placeholder='Senha' name='password'></input>    
-            <input type='submit' value='Entrar'></input>
-            
-            </form>      
+          <div style={{background:`rgba(0,0,0,0.5)`, textAlign:"center"}}>
+            <h1 style={{margin:"auto", fontSize:"54.8px"}} italics>@rise.unesp</h1>        
           </div>
-          </div>
-
-          <div onMouseDownCapture={useTrue} ref={ref} style={
-            {
-              position:'absolute',
-              left: position[0][0], 
-              top: position[0][1],
-              zIndex: zIndex[0]
-            }
-          } id="LoginDiv.0" className='windowHeadDiv'>
-
-          </div>
-          <div style={
-            {
-              position:'absolute',
-              left: position[1][0], 
-              top: position[1][1],
-              zIndex: zIndex[1]
-            }
-          } className='windowBodyDiv'> 
-
-          <div className='insideWindowBody'>
-            <form method='POST' onSubmit={handleSubmit}>
-            <text>Nome</text>
-            <input type='text' placeholder='digite seu nome' name='name'></input>
-            <text>Email</text>
-            <input type='text' placeholder='Digite seu email' name='email'></input>
-            <text>Registro de aluno (RA)</text>
-            <input type='text' placeholder='Digite seu ra' name='ra'></input>
-            <text>Senha</text>
-            <input type='password' placeholder='Digite sua senha' name='password'></input>    
-            <input type='password' placeholder='Repita sua senha' name='password-confirmation'></input> 
-            <input type='submit' value='Cadastrar'></input>
-            
-            </form>      
-          </div>
-          </div>
-
-          <div onMouseDownCapture={useTrue} ref={ref} style={
-            {
-              position:'absolute',
-              left: position[1][0], 
-              top: position[1][1],
-              zIndex: zIndex[1]
-            }
-          } id="RegisterDiv.1" className='windowHeadDiv'>
-
-          </div>
-        
-          <TaskBar/>
+          <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} />
           
       </div>
     </body>

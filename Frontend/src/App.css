@@ -1,4 +1,5 @@
 * {
+  font-family: "Lucida Console", "Courier New", monospace;
   margin: 0;
   padding: 0;
   outline: 0;
@@ -16,19 +17,54 @@ html, body, #root {
   user-select: none;
   
 }
+.windowHeadDiv button{
+  background-color: transparent;
+  color:white;
+  font-size:22px;
+  width:10%;
+  float:right;
+}
+
+.donationButton input[type='image']{
+  width:300px;
+  height:200px;
+  margin:auto;
+  float:center;
+}
+
+.windowHeadDiv button:active{
+  background-color: crimson;
+}
+
 .windowBodyDiv{
     width: 40%;
-    background-color:#5774AD;
+    background-color:rgba(219,51,138,0.9);
     border: 2px solid black;
 }
 
 .insideWindowBody{
   margin-top: 30px;
   text-align: center;
-  color: orange;
+  color: white;
   font-size: 30px;
   margin-bottom: 15px;
+}
 
+.insideWindowBody h3 {
+  margin-top: 16px;
+  color: white;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.insideWindowBody p {
+  text-align: center;
+  justify-content: center;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 .insideWindowBody input{
@@ -84,7 +120,8 @@ footer {
 .section__padding {
   padding: 4rem 6rem;
 }
-.section__margin {
+.
+section__margin {
   margin: 4rem 6rem;
 }
 .shadow-drop-2-center {
@@ -97,6 +134,18 @@ h1 {
   color: white;
   margin-left: 50px;
   margin-top: 25px;
+}
+
+h3  {
+  text-align: left;
+  color: white;
+  font-weight: bold;
+}
+
+p {
+  text-align: left;
+  color: white;
+  font-size: small;
 }
 
 @-webkit-keyframes shadow-drop-2-center {

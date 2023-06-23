@@ -45,8 +45,8 @@ public class Usuario implements UserDetails {
     this.admin = admin;
   }
 
-  @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
-  private List<Filesinfos> fileInfo = new ArrayList<Filesinfos>();
+//  @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL, orphanRemoval = true)
+//  private List<Filesinfos> fileInfo = new ArrayList<Filesinfos>();
 
   @OneToMany(fetch = FetchType.EAGER)
   @JoinTable(
@@ -114,13 +114,13 @@ public class Usuario implements UserDetails {
     return true;
   }
 
-  public List<Filesinfos> getFileInfo() {
-    return fileInfo;
-  }
+//  public List<Filesinfos> getFileInfo() {
+//    return fileInfo;
+//  }
 
-  public void setFileInfo(List<Filesinfos> fileInfo) {
-    this.fileInfo = fileInfo;
-  }
+// public void setFileInfo(List<Filesinfos> fileInfo) {
+// this.fileInfo = fileInfo;
+// }
 
 
   public Long getId() {
