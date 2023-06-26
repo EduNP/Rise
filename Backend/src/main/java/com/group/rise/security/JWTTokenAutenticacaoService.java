@@ -48,8 +48,12 @@ public class JWTTokenAutenticacaoService {
 		/*Adiciona no cabeçalho http*/
 		response.addHeader(HEADER_STRING, token); /*Authorization: Bearer 87878we8we787w8e78w78e78w7e87w*/
 		
+		Usuario usuario = ApplicationContextLoad.getApplicationContext()
+						        .getBean(UserRepository.class).findUserByLogin(username);
+
 		/*Escreve token como responsta no corpo http*/
-		response.getWriter().write("{\"Authorization\": \""+token+"\"}");
+
+		response.getWriter().write("{\"Authorization\": \""+token+"\", \"user\":\"" + usuario.getId()+ "\"}");
 		
 	}
 	

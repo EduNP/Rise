@@ -59,13 +59,21 @@ public class IndexController {
     return new ResponseEntity<>(userSalvo, HttpStatus.OK);
   }
 
-  @PutMapping(value = "/", produces = "application/json")
-  public ResponseEntity<Usuario> atualizar(@RequestBody Usuario user) {
+  @PutMapping(value = "/{id}", produces = "application/json")
+  public ResponseEntity<Usuario> atualizar(@RequestBody Usuario user, @PathVariable(value = "id") Long id) {
     for (int pos = 0; pos < user.getPhoneNumbers().size(); pos++) {
       user.getPhoneNumbers().get(pos).setUsuario(user);
     }
 
-    Usuario userSalvo = userRepository.save(user);
+    Usuario tempUser = userRepository.findById(id).get();
+
+    Usuario newUser = new Usuario();
+    newUser.setEmail(tempUser.getEmail());
+    newUser.setName(tempUser.getName());
+    newUser.setId(tempUser.getId());
+    newUser.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
+    
+    Usuario userSalvo = userRepository.save(newUser);
 
     return new ResponseEntity<>(userSalvo, HttpStatus.OK);
   }

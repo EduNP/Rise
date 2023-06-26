@@ -19,27 +19,40 @@ export default function ChangePassword(props)  {
     event.preventDefault();
     
     if(handlePasswordSubmit())  {
-      var formsData = event.target.elements;
-
+      var userData = event.target.elements 
       const postData = {
         id: "",
-        name: formsData.name.value,
-        email: formsData.email.value,
-        password: formsData.password.value,
-        score: 0,
-        admin: 0,
-        phoneNumbers: [
-          ]
-      };
+        email: userData.email.value,
+        password: userData.oldPassword.value
+      }
+      axios.post('https://rise.edunp.com.br/api/login', postData)
+      .then(response => {
+        console.log(response.data);
+        //Put alterar senha
+        const postNewData = {
+          id: response.data.user,
+          password: userData.password.value
+        };  
+        console.log(postNewData);
 
-      axios.post('https://rise.edunp.com.br/api/usuario/', postData)
-        .then(response => {
-          console.log(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    }
+        const config = {
+          headers: { Authorization: response.data.Authorization }
+        };
+
+        axios.put('https://rise.edunp.com.br/api/usuario/'+response.data.user, postNewData,config)
+          .then(responseNew => {
+            console.log(responseNew.data);
+          })
+          .catch(error => {
+            console.error(error);
+          });
+
+
+      })
+      .catch(error => {
+        console.error(error);
+      });
+      }
   }
   
   const handlePasswordSubmit = () => {
@@ -47,7 +60,7 @@ export default function ChangePassword(props)  {
       alert('Senhas diferentes')
       return false
     } 
-    if (password.length() < 10) {
+    if (password.length < 10) {
       alert('Senhas devem ter no mínimo 10 caracteres')
       return false
     }
@@ -67,7 +80,11 @@ export default function ChangePassword(props)  {
       } className='windowBodyDiv'> 
 
         <div className='insideWindowBody'>
-          <form method='GET' onSubmit={handleSubmit}>
+            <form method='POST' onSubmit={handleSubmit}>
+            <text>Email</text>
+            <input type='text' placeholder='Email' name='email' required></input>
+            <text>Senha Antiga</text>
+            <input type='password' placeholder='Senha Antiga' name='oldPassword' required></input>    
             <text>Nova Senha</text>
             <input
                 type='password'
