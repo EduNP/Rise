@@ -110,7 +110,7 @@ export default function TaskBar(props) {
             {(isVisible[0] /*|| isHovering*/) && <Menu/>}
  
             {/*LOGIN*/}
-            {isVisible[1] && <Login position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>}
+            {isVisible[1] && <Login setUser={props.setUser} position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>}
             {/*LOGIN*/}
             {/*REGISTER*/}
             {isVisible[2] && <Register position={position} zIndex={zIndex} useTrue={useTrue} ref={ref}/>}

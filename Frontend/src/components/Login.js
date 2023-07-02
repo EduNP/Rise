@@ -4,6 +4,7 @@ import pinComponent from './TaskBar';
 export default function Login(props) {
   const {position, zIndex, useTrue, ref} = props
   
+
   const handleUserSignUp = (e) => {
     e.preventDefault()
 
@@ -17,6 +18,21 @@ export default function Login(props) {
     axios.post('https://rise.edunp.com.br/api/login', postData)
     .then(response => {
       console.log(response);
+
+      const config = {
+        headers: { Authorization: response.data.Authorization }
+      };
+   
+      axios.get('https://rise.edunp.com.br/api/usuario/'+response.data.user,config)
+      .then(responseNew => {
+        console.log(responseNew.data);
+        localStorage.setItem('userName', responseNew.data.name);
+        props.setUser(responseNew.data.name);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
     })
     .catch(error => {
       console.error(error);

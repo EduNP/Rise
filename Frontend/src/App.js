@@ -1,7 +1,7 @@
 import TaskBar from './components/TaskBar';
 import './App.css';
 import axios from 'axios';
-import {useRef, useState} from 'react';
+import {useRef, useState, useEffect} from 'react';
 
 function App() {
 
@@ -65,13 +65,16 @@ function App() {
 
   }
 
+  const [userName, setUserName] = useState(null);
+  useEffect(()=>{ setUserName(localStorage.getItem('userName'))});
+
   return (  
     <body onLoad={move()}>
       <div className='container'>
           <div style={{background:`rgba(0,0,0,0.5)`, textAlign:"center"}}>
-            <h1 style={{margin:"auto", fontSize:"54.8px"}} italics>@rise.unesp</h1>        
+            <h1 style={{margin:"auto", fontSize:"54.8px"}} italics>@rise.unesp  {userName != null && <h6>Olá, {userName}</h6>}</h1>        
           </div>
-          <TaskBar position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} />
+          <TaskBar setUser={setUserName} position={position} zIndex={zIndex} useTrue={useTrue} ref={ref} />
           
       </div>
     </body>

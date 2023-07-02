@@ -1130,3 +1130,73 @@ org.postgresql.util.PSQLException: ERROR: relation "event" does not exist
 2023-06-26 14:30:02.602  INFO 66730 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
 2023-06-26 14:30:02.758  INFO 66730 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
 2023-06-26 14:30:02.773  INFO 66730 --- [  restartedMain] com.group.rise.RiseApplication           : Started RiseApplication in 14.73 seconds (JVM running for 16.411)
+2023-06-27 07:50:59.078  INFO 66730 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-27 07:50:59.079  INFO 66730 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-27 07:50:59.082  INFO 66730 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< com.group:rise >---------------------------
+[INFO] Building rise 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot-maven-plugin:2.7.10:run (default-cli) > test-compile @ rise >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ rise ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Using 'UTF-8' encoding to copy filtered properties files.
+[INFO] Copying 1 resource
+[INFO] Copying 0 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ rise ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ rise ---
+[INFO] Not copying test resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ rise ---
+[INFO] Not compiling test sources
+[INFO] 
+[INFO] <<< spring-boot-maven-plugin:2.7.10:run (default-cli) < test-compile @ rise <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.7.10:run (default-cli) @ rise ---
+[INFO] Attaching agents: []
+16:42:43.241 [Thread-0] DEBUG org.springframework.boot.devtools.restart.classloader.RestartClassLoader - Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@34dc3897
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::               (v2.7.10)
+
+2023-06-28 16:42:43.942  INFO 1263 --- [  restartedMain] com.group.rise.RiseApplication           : Starting RiseApplication using Java 17.0.7 on rise with PID 1263 (/home/user/dev/Backend/target/classes started by user in /home/user/dev/Backend)
+2023-06-28 16:42:43.943  INFO 1263 --- [  restartedMain] com.group.rise.RiseApplication           : No active profile set, falling back to 1 default profile: "default"
+2023-06-28 16:42:44.126  INFO 1263 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-06-28 16:42:44.127  INFO 1263 --- [  restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-06-28 16:42:45.286  INFO 1263 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-28 16:42:45.355  INFO 1263 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 58 ms. Found 3 JPA repository interfaces.
+2023-06-28 16:42:46.915  INFO 1263 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-28 16:42:46.955  INFO 1263 --- [  restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-28 16:42:46.955  INFO 1263 --- [  restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.73]
+2023-06-28 16:42:47.059  INFO 1263 --- [  restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring embedded WebApplicationContext
+2023-06-28 16:42:47.059  INFO 1263 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2932 ms
+2023-06-28 16:42:47.411  INFO 1263 --- [  restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-28 16:42:47.488  INFO 1263 --- [  restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.15.Final
+2023-06-28 16:42:47.732  INFO 1263 --- [  restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-06-28 16:42:47.867  INFO 1263 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-28 16:42:48.720  INFO 1263 --- [  restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-28 16:42:48.783  INFO 1263 --- [  restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-28 16:42:50.041  INFO 1263 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-28 16:42:50.079  INFO 1263 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-28 16:42:50.086  INFO 1263 --- [  restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static org.springframework.context.ApplicationContext com.group.rise.ApplicationContextLoad.applicationContext
+2023-06-28 16:42:50.556  WARN 1263 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-28 16:42:50.928  INFO 1263 --- [  restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6feb532e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2fb875a, org.springframework.security.web.header.HeaderWriterFilter@4568334e, org.springframework.security.web.authentication.logout.LogoutFilter@1a374871, com.group.rise.security.JWTLoginFilter@2ed1f8c2, com.group.rise.security.JwtApiAutenticacaoFilter@71e92ac8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48843de9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3fdb48c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@704b210e, org.springframework.security.web.session.SessionManagementFilter@573d426c, org.springframework.security.web.access.ExceptionTranslationFilter@6d32c099, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5319fb8d]
+2023-06-28 16:42:51.682  INFO 1263 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-06-28 16:42:51.736  INFO 1263 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/api'
+2023-06-28 16:42:51.750  INFO 1263 --- [  restartedMain] com.group.rise.RiseApplication           : Started RiseApplication in 8.501 seconds (JVM running for 9.322)
+2023-06-28 16:43:43.938  INFO 1263 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/api]    : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-28 16:43:43.940  INFO 1263 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-28 16:43:43.943  INFO 1263 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-07-02 15:20:43.615  WARN 1263 --- [nio-8080-exec-2] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [321] milliseconds.
