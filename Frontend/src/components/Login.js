@@ -26,7 +26,7 @@ export default function Login(props) {
       axios.get('https://rise.edunp.com.br/api/usuario/'+response.data.user,config)
       .then(responseNew => {
         console.log(responseNew.data);
-        localStorage.setItem('userName', responseNew.data.name);
+        sessionStorage.setItem('userName', responseNew.data.name);
         props.setUser(responseNew.data.name);
       })
       .catch(error => {

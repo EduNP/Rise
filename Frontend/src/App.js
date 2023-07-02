@@ -66,7 +66,7 @@ function App() {
   }
 
   const [userName, setUserName] = useState(null);
-  useEffect(()=>{ setUserName(localStorage.getItem('userName'))});
+  useEffect(()=>{ setUserName(sessionStorage.getItem('userName'))});
 
   return (  
     <body onLoad={move()}>
